@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>
+      Cryptocurrency Price Tracker – Fake Crypto Prices | Kalkulator kryptowalut (demo)
+    </title>
+    <meta
+      name="description"
+      content="Simple cryptocurrency price tracker with fake demo prices for Bitcoin, Ethereum, Solana, Ripple and Binance Coin. Educational one-pager with English and Polish text about a demo crypto price tracker and kalkulator kryptowalut."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        
+        background: linear-gradient(to right, #d6e9f5, #ffffff);
+      }
+
+      h1 {
+        text-align: center;
+        margin-top: 30px;
+      }
+
+      h2,
+      p {
+        margin: 10px 0;
+      }
+
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        background-color: #444444; 
+        display: flex;
+        justify-content: center;
+      }
+
+      ul li a {
+        display: block;
+        color: white;
+        padding: 14px 20px;
+        text-decoration: none;
+      }
+
+      ul li a:hover {
+        background-color: #222222;
+      }
+
+      .top-bar {
+        max-width: 1000px;
+        margin: 10px auto 0;
+        padding: 0 20px 10px;
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .top-bar label {
+        font-size: 13px;
+      }
+
+      .content-wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      .container {
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: center; 
+        background-color: #b7d6ff; 
+        padding: 10px 0;
+      }
+
+      .container div {
+        background-color: #f1f1f1;
+        margin: 10px;
+        padding: 15px 20px;
+        font-size: 20px; 
+        text-align: center;
+        min-width: 180px;
+      }
+
+      .signin-box {
+        float: right;
+        background: #ffffff;
+        padding: 10px 15px;
+        border: 1px solid #dddddd;
+        margin: 10px 0 20px 20px;
+      }
+
+      .signin-box label {
+        display: block;
+        font-size: 12px;
+        margin-top: 5px;
+      }
+
+      .signin-box input {
+        width: 180px;
+        padding: 4px;
+        margin-bottom: 6px;
+        border: 1px solid #cccccc;
+      }
+
+      .signin-box button {
+        margin-top: 4px;
+        padding: 5px 10px;
+      }
+
+      hr {
+        margin: 30px auto;
+        max-width: 90%;
+        border: 0;
+        border-top: 1px solid #cccccc;
+      }
+
+      blockquote {
+        margin: 20px auto 5px;
+        max-width: 500px;
+        border-left: 4px solid #999999;
+        padding-left: 10px;
+        font-style: italic;
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      section.crypto-info {
+        max-width: 900px;
+        margin: 20px auto;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.9);
+      }
+
+      button.download-btn {
+        display: block;
+        margin: 30px auto 0;
+        padding: 8px 16px;
+      }
+
+      footer {
+        margin-top: 40px;
+        text-align: center;
+      }
+
+      footer p {
+        font-size: 12px;
+        margin: 10px 0 20px;
+      }
+    </style>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Cryptocurrency Price Tracker Demo / Kalkulator kryptowalut",
+        "description": "Educational cryptocurrency price tracker with fake demo prices in English and Polish, used as a demo kalkulator kryptowalut.",
+        "inLanguage": ["en", "pl"],
+        "url": "https://example.com/crypto-price-tracker-demo",
+        "keywords": [
+          "cryptocurrency price tracker",
+          "crypto price tracker",
+          "fake crypto prices",
+          "kalkulator kryptowalut",
+          "kurs kryptowalut",
+          "przelicznik kryptowalut"
+        ],
+        "creator": [
+          {
+            "@type": "Person",
+            "name": "Bartosz Piątek"
+          },
+          {
+            "@type": "Person",
+            "name": "Alexander Gawrylo"
+          }
+        ]
+      }
+    </script>
+  </head>
+
+  <body>
+    <ul>
+      <li><a href="#home" data-i18n-key="nav.home">Home</a></li>
+      <li><a href="#news" data-i18n-key="nav.news">News</a></li>
+      <li><a href="#contact" data-i18n-key="nav.contact">Contact</a></li>
+      <li><a href="#about" data-i18n-key="nav.about">About</a></li>
+    </ul>
+
+    <div class="top-bar">
+      <label>
+        <span data-i18n-key="ui.language">Language:</span>
+        <select id="langSelect">
+          <option value="en">English</option>
+          <option value="pl">Polski</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="content-wrapper" id="home">
+      <div class="signin-box">
+        <form>
+          <label data-i18n-key="form.username.label">Username:</label>
+          <input
+            type="text"
+            data-i18n-placeholder-key="form.username.placeholder"
+            placeholder="demo-user"
+          /><br />
+
+          <label data-i18n-key="form.password.label">Password:</label>
+          <input
+            type="Password"
+            data-i18n-placeholder-key="form.password.placeholder"
+            placeholder="demo-password"
+          /><br />
+
+          <button type="submit" data-i18n-key="form.button">Sign In</button>
+        </form>
+      </div>
+
+      <h1 data-i18n-key="page.title">
+        The Most ADVANCED Cryptocurrency Price Tracker!
+      </h1>
+      <p class="text-center" data-i18n-html-key="page.subtitle.html">
+        This website allows you to check <strong>live crypto prices</strong> – or at least fake demo
+        prices that look like a real <strong>cryptocurrency price tracker</strong>.
+      </p>
+
+      <hr />
+
+      <h3 style="padding: 0 20px;" data-i18n-key="prices.title">
+        Examples of cryptocurrencies with 'fake' prices!:
+      </h3>
+      <div class="container" aria-label="Fake cryptocurrency prices">
+        <div data-i18n-key="prices.xrp">Ripple (XRP) : $1.92</div>
+        <div data-i18n-key="prices.sol">Solana (SOL) : $129.38</div>
+        <div data-i18n-key="prices.btc">Bitcoin (BTC) : $84,728.00</div>
+        <div data-i18n-key="prices.eth">Ethereum (ETH) : $2,760.99</div>
+        <div data-i18n-key="prices.bnb">Binance Coin (BNB) : $831.65</div>
+      </div>
+
+      <div class="text-center">
+        <blockquote>
+          <p data-i18n-key="quote.text">
+            Bitcoin is a technological tour de force.
+          </p>
+        </blockquote>
+        <p data-i18n-key="quote.author">
+          —Bill Gates, co-founder of Microsoft, investor, and philanthropist
+        </p>
+
+        <section
+          class="crypto-info"
+          lang="en"
+          aria-label="Crypto explanation"
+        >
+          <h2
+            style="text-align: center; margin-top: 0;"
+            data-i18n-key="section.about.title"
+          >
+            What Is Cryptocurrency?
+          </h2>
+          <p
+            style="font-size: 16px; line-height: 1.6;"
+            data-i18n-html-key="section.about.p1.html"
+          >
+            Cryptocurrencies are digital assets secured by cryptography and powered by decentralized
+            networks, usually based on blockchain technology. Instead of relying on a central
+            authority like a bank, transactions are verified by a global network of computers. This
+            makes the system transparent, hard to censor, and available 24/7 anywhere in the world.
+          </p>
+          <p
+            style="font-size: 16px; line-height: 1.6;"
+            data-i18n-html-key="section.about.p2.html"
+          >
+            The first and most famous cryptocurrency is <strong>Bitcoin</strong>, often called
+            digital gold because of its limited supply and use as a store of value. Other coins like
+            <strong>Ethereum</strong> add extra features such as smart contracts, which are pieces of
+            code that run automatically when certain conditions are met.
+          </p>
+
+          <h3
+            style="margin-top: 25px;"
+            data-i18n-key="section.why.title"
+          >
+            Why Do People Care About Crypto?
+          </h3>
+          <p
+            style="font-size: 16px; line-height: 1.6;"
+            data-i18n-key="section.why.intro"
+          >
+            Crypto isn’t just about price charts and speculation. For many people, it’s interesting
+            because it:
+          </p>
+          <ul
+            style="
+              font-size: 16px;
+              line-height: 1.6;
+              padding-left: 20px;
+              text-align: left;
+            "
+          >
+            <li data-i18n-html-key="section.why.li1.html">
+              <strong>Enables borderless payments</strong> – you can send value to someone on the
+              other side of the world in minutes.
+            </li>
+            <li data-i18n-html-key="section.why.li2.html">
+              <strong>Offers financial access</strong> – anyone with an internet connection can
+              create a wallet and participate.
+            </li>
+            <li data-i18n-html-key="section.why.li3.html">
+              <strong>Supports programmable money</strong> – smart contracts allow complex financial
+              logic without a middleman.
+            </li>
+            <li data-i18n-html-key="section.why.li4.html">
+              <strong>Creates new digital assets</strong> – tokens and NFTs represent everything
+              from art to in-game items.
+            </li>
+          </ul>
+
+          <h3
+            style="margin-top: 25px;"
+            data-i18n-key="section.risks.title"
+          >
+            Risks and Things to Watch Out For
+          </h3>
+          <p
+            style="font-size: 16px; line-height: 1.6;"
+            data-i18n-html-key="section.risks.p1.html"
+          >
+            The crypto market can be <strong>extremely volatile</strong>. Prices can rise or fall
+            dramatically in a short time, and there is always a risk of losing money. On top of that,
+            users need to be careful with security: if you lose access to your private keys or
+            recovery phrases, you can lose access to your funds permanently.
+          </p>
+          <p
+            style="font-size: 16px; line-height: 1.6; margin-bottom: 0;"
+            data-i18n-html-key="section.risks.p2.html"
+          >
+            Because of these risks, many people treat crypto as a high-risk, experimental part of the
+            financial world. Tools like this simple cryptocurrency price tracker with fake prices help
+            users follow the market and learn how such pages are built.
+          </p>
+        </section>
+      </div>
+
+      <button
+        class="download-btn"
+        onclick="download()"
+        data-i18n-key="button.download"
+      >
+        Download Page
+      </button>
+    </div>
+
+    <footer>
+      <p>
+        CREATED BY BARTOSZ PIĄTEK AND ALEXANDER GAWRYLO
+      </p>
+    </footer>
+
+    <script>
+      const MESSAGES = {
+        en: {
+          "ui.language": "Language:",
+          "nav.home": "Home",
+          "nav.news": "News",
+          "nav.contact": "Contact",
+          "nav.about": "About",
+          "form.username.label": "Username:",
+          "form.password.label": "Password:",
+          "form.password.placeholder": "password",
+          "form.username.placeholder": "user",
+          "form.button": "Sign In",
+          "page.title": "The Most ADVANCED Cryptocurrency Price Tracker!",
+          "page.subtitle.html":
+            "This website allows you to check <strong>live crypto prices</strong> – or at least fake demo prices that look like a real <strong>cryptocurrency price tracker</strong>.",
+          "prices.title": "Examples of cryptocurrencies with 'fake' prices!:",
+          "prices.xrp": "Ripple (XRP) : $1.92",
+          "prices.sol": "Solana (SOL) : $129.38",
+          "prices.btc": "Bitcoin (BTC) : $84,728.00",
+          "prices.eth": "Ethereum (ETH) : $2,760.99",
+          "prices.bnb": "Binance Coin (BNB) : $831.65",
+          "quote.text": "Bitcoin is a technological tour de force.",
+          "quote.author":
+            "—Bill Gates, co-founder of Microsoft, investor, and philanthropist",
+          "section.about.title": "What Is Cryptocurrency?",
+          "section.about.p1.html":
+            "Cryptocurrencies are digital assets secured by cryptography and powered by decentralized networks, usually based on blockchain technology. Instead of relying on a central authority like a bank, transactions are verified by a global network of computers. This makes the system transparent, hard to censor, and available 24/7 anywhere in the world.",
+          "section.about.p2.html":
+            "The first and most famous cryptocurrency is <strong>Bitcoin</strong>, often called digital gold because of its limited supply and use as a store of value. Other coins like <strong>Ethereum</strong> add extra features such as smart contracts, which are pieces of code that run automatically when certain conditions are met.",
+          "section.why.title": "Why Do People Care About Crypto?",
+          "section.why.intro":
+            "Crypto isn’t just about price charts and speculation. For many people, it’s interesting because it:",
+          "section.why.li1.html":
+            "<strong>Enables borderless payments</strong> – you can send value to someone on the other side of the world in minutes.",
+          "section.why.li2.html":
+            "<strong>Offers financial access</strong> – anyone with an internet connection can create a wallet and participate.",
+          "section.why.li3.html":
+            "<strong>Supports programmable money</strong> – smart contracts allow complex financial logic without a middleman.",
+          "section.why.li4.html":
+            "<strong>Creates new digital assets</strong> – tokens and NFTs represent everything from art to in-game items.",
+          "section.risks.title": "Risks and Things to Watch Out For",
+          "section.risks.p1.html":
+            "The crypto market can be <strong>extremely volatile</strong>. Prices can rise or fall dramatically in a short time, and there is always a risk of losing money. On top of that, users need to be careful with security: if you lose access to your private keys or recovery phrases, you can lose access to your funds permanently.",
+          "section.risks.p2.html":
+            "Because of these risks, many people treat crypto as a high-risk, experimental part of the financial world. Tools like this simple cryptocurrency price tracker with fake prices help users follow the market and learn how such pages are built.",
+          "button.download": "Download Page"
+        },
+
+        pl: {
+          "ui.language": "Język:",
+          "nav.home": "Strona główna",
+          "nav.news": "Nowości",
+          "nav.contact": "Kontakt",
+          "nav.about": "O nas",
+          "form.username.label": "Nazwa użytkownika:",
+          "form.password.label": "Hasło:",
+          "form.username.placeholder": "uzytkownik",
+          "form.password.placeholder": "haslo",
+          "form.button": "Zaloguj",
+          "page.title": "Najbardziej ZAAWANSOWANY tracker kryptowalut!",
+          "page.subtitle.html":
+            "Ta strona pozwala sprawdzić <strong>kurs kryptowalut</strong> – w wersji demo z fikcyjnymi cenami, które wyglądają jak prosty <strong>kalkulator kryptowalut</strong>.",
+          "prices.title": "Przykładowe kryptowaluty z fikcyjnymi cenami:",
+          "prices.xrp": "Ripple (XRP) : $1,92",
+          "prices.sol": "Solana (SOL) : $129,38",
+          "prices.btc": "Bitcoin (BTC) : $84 728,00",
+          "prices.eth": "Ethereum (ETH) : $2 760,99",
+          "prices.bnb": "Binance Coin (BNB) : $831,65",
+          "quote.text": "Bitcoin to technologiczny wyczyn.",
+          "quote.author":
+            "—Bill Gates, współzałożyciel Microsoftu, inwestor i filantrop",
+          "section.about.title":
+            "Czym jest kryptowaluta i kalkulator kryptowalut?",
+          "section.about.p1.html":
+            "Kryptowaluty to cyfrowe aktywa zabezpieczone kryptografią i oparte na zdecentralizowanych sieciach, zwykle na technologii blockchain. Zamiast polegać na banku centralnym, transakcje są weryfikowane przez globalną sieć komputerów. Dzięki temu system jest przejrzysty, trudny do ocenzurowania i dostępny 24/7.",
+          "section.about.p2.html":
+            "Pierwszą i najbardziej znaną kryptowalutą jest <strong>Bitcoin</strong>, często nazywany cyfrowym złotem ze względu na ograniczoną podaż i rolę magazynu wartości. Inne projekty, takie jak <strong>Ethereum</strong>, dodają inteligentne kontrakty, które wykonują się automatycznie po spełnieniu określonych warunków.",
+          "section.why.title": "Dlaczego ludzie interesują się kryptowalutami?",
+          "section.why.intro":
+            "Kryptowaluty to nie tylko spekulacja i wykresy. Dla wielu osób są ciekawe, ponieważ:",
+          "section.why.li1.html":
+            "<strong>Umożliwiają płatności bez granic</strong> – możesz wysłać wartość na drugi koniec świata w kilka minut.",
+          "section.why.li2.html":
+            "<strong>Dają dostęp do finansów</strong> – wystarczy dostęp do internetu, aby założyć portfel i dołączyć do sieci.",
+          "section.why.li3.html":
+            "<strong>Wspierają programowalny pieniądz</strong> – inteligentne kontrakty pozwalają automatyzować zasady finansowe.",
+          "section.why.li4.html":
+            "<strong>Tworzą nowe cyfrowe aktywa</strong> – tokeny i NFT mogą reprezentować sztukę lub przedmioty z gier.",
+          "section.risks.title": "Ryzyka i na co uważać",
+          "section.risks.p1.html":
+            "Rynek kryptowalut jest <strong>bardzo zmienny</strong>. Ceny mogą szybko rosnąć lub spadać, a pieniądze można łatwo stracić. Trzeba też dbać o bezpieczeństwo portfela – utrata klucza prywatnego lub frazy odzyskującej może oznaczać utratę środków na zawsze.",
+          "section.risks.p2.html":
+            "Z tego powodu wiele osób traktuje kryptowaluty jako wysokie ryzyko i eksperyment. Taki prosty tracker i <strong>przelicznik kryptowalut</strong> z fikcyjnymi cenami pomaga uczyć się, jak wyglądają strony z kursem kryptowalut i jak działa SEO oraz AEO.",
+          "button.download": "Pobierz stronę"
+        }
+      };
+
+      let currentLang = "en";
+
+      function t(key) {
+        return MESSAGES[currentLang]?.[key] ?? key;
+      }
+
+      function applyTranslations(lang) {
+        currentLang = lang;
+        document.documentElement.lang = lang;
+
+        document
+          .querySelectorAll("[data-i18n-key]")
+          .forEach((el) => {
+            el.textContent = t(el.getAttribute("data-i18n-key"));
+          });
+
+        document
+          .querySelectorAll("[data-i18n-html-key]")
+          .forEach((el) => {
+            el.innerHTML = t(el.getAttribute("data-i18n-html-key"));
+          });
+
+        document
+          .querySelectorAll("[data-i18n-placeholder-key]")
+          .forEach((el) => {
+            el.placeholder = t(el.getAttribute("data-i18n-placeholder-key"));
+          });
+      }
+
+      const langSelect = document.getElementById("langSelect");
+      langSelect.onchange = () => applyTranslations(langSelect.value);
+
+      applyTranslations("en");
+
+      function download() {
+        print();
+      }
+    </script>
+  </body>
+</html>
