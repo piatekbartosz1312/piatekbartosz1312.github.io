@@ -1,179 +1,399 @@
-# CryptoTracker (Demo) — Bootstrap Student Project
+# Project Overview
 
-A **production-ready, responsive** demo website built with **Bootstrap 5** and **Font Awesome** (both via CDN).  
-It’s designed to meet a typical front-end “build + deploy” assignment: multi-section layout, Bootstrap grid/components/utilities, custom styling, privacy/GDPR transparency, a custom 404 page, and basic SEO files.
+This project is a **Cryptocurrency Price Tracker** webpage built as a small showcase site in pure HTML and CSS. The page is a static prototype that presents example (“fake”) prices for several popular cryptocurrencies and demonstrates layout, navigation, and basic UI elements rather than real-time data.
 
-> **Important:** All cryptocurrency “prices” shown are **fake demo values** for learning purposes.  
-> This project does **not** fetch real market data and does **not** store personal data.
+The main goals of the page are:
 
----
+* To practice semantic(ish) HTML structure and layout.
+* To experiment with **flexbox** for horizontal alignment of “cards”.
+* To create a visually engaging hero section with a gradient background and centered content.
+* To prepare a structure that could later be extended with real API data and more advanced styling.
 
-## Live Links (fill these in after deployment)
-
-- **Public website URL:** `https://YOUR-SITE-URL/`
-- **GitHub repository URL:** `https://github.com/YOUR-USERNAME/YOUR-REPO/`
+The project currently consists of a single file: `index.html`.
 
 ---
 
-## Features (what you can demo quickly)
+# HTML Structure Decisions
 
-- **Landing (Hero) section** with headline, subheadline, and primary CTA
-- **Responsive content section** using Bootstrap grid + **Cards**
-- **Advanced Bootstrap components**:
-  - **Carousel** (Updates & tips)
-  - **Accordion** (FAQ)
-  - **Modal** (Sign-in demo)
-- **Contact section** with **Bootstrap form controls** + client-side validation styling
-- **Font Awesome icons** used consistently across navigation, sections, and footer
-- **Privacy/GDPR page** stating no data collection/storage
-- **Custom 404 page** styled with Bootstrap
-- **sitemap.xml** and **robots.txt** included in the project root
-- Lightweight JavaScript only (no frameworks)
+The HTML begins with the standard `<!doctype html>` declaration and a minimal `<head>`:
 
----
-
-## Tech Stack
-
-- **Bootstrap 5.3** (CDN)
-- **Font Awesome 6** (CDN)
-- Vanilla **HTML / CSS / JavaScript**
-
----
-
-## Project Structure
-
-```text
-bootstrap-crypto-tracker/
-├─ index.html
-├─ privacy.html
-├─ 404.html
-├─ sitemap.xml
-├─ robots.txt
-└─ assets/
-   ├─ css/
-   │  └─ styles.css
-   └─ js/
-      └─ main.js
+```html
+<!doctype html>
+<html>
+  <head>
+    <title>Cryptocurrency Price Tracker</title>
+  </head>
+  ...
+</html>
 ```
 
----
+The actual structure is organized into a few logical visual sections:
 
-## How to Run Locally
+* **Navigation bar**
+  A simple navigation bar is implemented as a plain unordered list:
 
-Because this is a static site, you can open `index.html` directly, but using a local server is better (relative paths, 404 testing, etc.).
+  ```html
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#news">News</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#about">About</a></li>
+  </ul>
+  ```
 
-### Option A — VS Code Live Server
-1. Open the folder in VS Code
-2. Install **Live Server**
-3. Right-click `index.html` → **Open with Live Server**
+  The `<ul>` is later styled with flexbox to display the items horizontally. In a future iteration, this would be wrapped in a semantic `<header>` and `<nav>` element.
 
-### Option B — Python simple server
-From the project root:
-```bash
-python -m http.server 8080
-```
-Then visit:
-- `http://localhost:8080/`
+* **Login form (top-right box)**
+  A small login box is placed on top of the page, using inline styles and absolute positioning:
 
----
+  ```html
+  <div style="position: absolute; top: 200px; right: 10px;
+              background: white; padding: 10px; border: 1px solid #ddd;">
+    <form>
+      <label>Username:</label><br>
+      <input type="text"><br>
+      <label>Password:</label><br>
+      <input type="Password"><br>
+      <button type="submit">Sign In</button>
+    </form>
+  </div>
+  ```
 
-## Deployment (recommended: GitHub Pages)
+  This demonstrates use of form elements and basic overlay positioning. It’s not yet optimized for responsiveness, but it clearly separates the login UI from the rest of the content.
 
-### GitHub Pages (quick steps)
-1. Create a GitHub repo and push the project files to the repo root.
-2. In GitHub: **Settings → Pages**
-3. Under **Build and deployment**:
-   - Source: **Deploy from a branch**
-   - Branch: `main` (or `master`) and `/ (root)`
-4. Save, wait for the URL to appear.
+* **Hero section**
+  The main heading and introductory text are centered using inline styles:
 
-**After deployment, update these files:**
-- `sitemap.xml`: replace `https://YOUR-DOMAIN/` with your real URL
-- `robots.txt`: replace the sitemap URL with your real URL
+  ```html
+  <h1 style="text-align: center;">
+    The Most ADVANCED Cryptocurrency Price Tracker!
+  </h1>
+  <p style="text-align: center;">
+    This website allows you to check live Crypto prices!
+  </p>
+  <hr>
+  ```
 
-### Netlify (alternative)
-1. Drag-and-drop the project folder into Netlify **or** connect a Git repo
-2. Build command: *(none)*
-3. Publish directory: `/` (root)
+  This acts as the “hero” area, introducing the purpose of the site.
 
----
+* **Cryptocurrency list (example prices)**
+  Example cryptocurrency prices are shown in a flex container:
 
-## Verification Checklist (assignment-focused)
+  ```html
+  <h3>Examples of cryptocurrencies with 'fake' prices!:</h3>
+  <div class="container">
+    <div>Ripple (XRP) : $1.92</div>
+    <div>Solana (SOL) : $129.38</div>
+    <div>Bitcoin (BTC) : $84,728.00</div>
+    <div>Ethereum (ETH) : $2,760.99</div>
+    <div>Binance Coin (BNB) : $831.65</div>
+  </div>
+  ```
 
-### Website structure
-- ✅ **Landing page / hero** with headline, subheadline, CTA (`index.html`)
-- ✅ **Content section** with responsive grid + cards + advanced component
-- ✅ **Contact section** with Bootstrap form controls
-- ✅ **Footer** with structured links
+  Each inner `<div>` functions as a “card” containing a single crypto and its price.
 
-### Bootstrap requirements
-- ✅ **Grid system:** `.container`, `.row`, `.col-*`
-- ✅ **Components (2+):** Navbar, Cards, Modal, Carousel, Accordion
-- ✅ **Utility classes (6+):** e.g. `py-5`, `mb-4`, `fw-bold`, `d-flex`, `gap-2`, `text-secondary`, `shadow-sm`, `rounded-4`, etc.
-- ✅ **Responsive behavior:** mobile → tablet → desktop layout adapts properly
+* **Quote section**
+  A short quote about Bitcoin is displayed using `<blockquote>` for emphasis:
 
-### Custom styling
-- ✅ `assets/css/styles.css` includes **3+ custom/overridden styles**
-  - Hero gradient background
-  - Focus-visible outlines for accessibility
-  - Hover polish for mini-stats (and helper classes)
+  ```html
+  <blockquote>
+    <p>Bitcoin is a technological tour de force.</p>
+  </blockquote>
+  <p>—Bill Gates,
+    <cite>co-founder of Microsoft, investor, and philanthropist</cite>
+  </p>
+  ```
 
-### Font Awesome
-- ✅ Included via CDN
-- ✅ 5+ icons used meaningfully (navbar, hero, cards, buttons, footer)
+  This illustrates the use of semantic tags like `<blockquote>` and `<cite>`.
 
-### GDPR / Privacy
-- ✅ `privacy.html` includes:
-  - student project statement
-  - no personal data collected/stored
-  - form data not retained
-  - transparency about CDN requests
+* **Download button and footer**
+  At the bottom, there is a button that triggers printing (as a “download” stand-in) and a footer with credits:
 
-### Custom 404
-- ✅ `404.html` in project root with Bootstrap styling and link back home
+  ```html
+  <button onclick="download()">Download Page</button><br>
 
-### SEO files
-- ✅ `sitemap.xml` in root (update domain after deploy)
-- ✅ `robots.txt` in root referencing sitemap (update domain after deploy)
+  <footer>
+    <p style="font-size:12px; text-align:center; margin-top: 750px;">
+      CREATED BY BARTOSZ PIĄTEK AND ALEXANDER GAWRYLO
+    </p>
+  </footer>
+  ```
 
----
+  The `download()` function simply calls `print()` in JavaScript.
 
-## Screenshots (submission requirement)
-
-Take and include 3 screenshots after deploying:
-1. **Mobile** (e.g., 375×667)
-2. **Tablet** (e.g., 768×1024)
-3. **Desktop** (e.g., 1440×900)
-
-Suggested method:
-- Use browser DevTools device toolbar for mobile/tablet
-- Full-window screenshot for desktop
-
----
-
-## Reflection (10 sentences) — template you can edit
-
-1. In this project, I built a responsive website using Bootstrap’s grid, components, and utilities.  
-2. I used a hero section to communicate the site’s purpose quickly for first-time visitors.  
-3. The grid system helped me create a layout that adapts well across mobile, tablet, and desktop.  
-4. Bootstrap components like the navbar, modal, carousel, and accordion improved usability and structure.  
-5. Utility classes let me style spacing and typography consistently without excessive custom CSS.  
-6. I added a custom `styles.css` file to apply a unique hero gradient and improve focus styles for accessibility.  
-7. Font Awesome icons improved visual clarity and helped users scan the UI faster.  
-8. I created a privacy page explaining that the site is a student project and does not store personal data.  
-9. I also added a custom 404 page plus `sitemap.xml` and `robots.txt` to meet basic production standards.  
-10. Deploying the site taught me how to verify asset paths, confirm public access, and validate that everything loads correctly.
+Overall, the structure is more “practical” than fully semantic. A clear improvement would be to reorganize the content into `<header>`, `<main>`, `<section>`, `<article>`, `<aside>`, and `<footer>` for better semantics and accessibility.
 
 ---
 
-## Notes / Maintenance
+# CSS Strategy
 
-- The “prices” are randomized locally for demo purposes (`assets/js/main.js`).
-- Forms are **client-only**: no backend, no storage, no email sending.
-- If you add more pages, remember to update `sitemap.xml`.
+The CSS is embedded in a `<style>` block in the HTML. There is no separate `style.css` file yet. The main design decisions are:
+
+* **Reset basic body spacing**
+
+  ```css
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  ```
+
+  This removes default browser margins and padding, giving full control over layout. The `<body>` itself also uses an inline style for a background gradient:
+
+  ```html
+  <body style="background: linear-gradient(to right, #1b95a5, #fff);">
+  ```
+
+  This gradient gives the page a modern, tech-inspired feel.
+
+* **Normalize spacing on headings and paragraphs**
+
+  ```css
+  h2, p {
+    margin: 10px;
+  }
+  ```
+
+  This is a simple way to keep text from sticking to the edges without writing many separate rules.
+
+* **Navigation bar styling with flexbox**
+
+  The unordered list is turned into a horizontal navigation bar:
+
+  ```css
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #333333;
+    display: flex;
+  }
+
+  ul li a {
+    display: block;
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  ul li a:hover {
+    background-color: #111111;
+  }
+  ```
+
+  Key choices:
+
+  * Removing bullets and default padding.
+  * Using `display: flex;` on the `<ul>` so the `<li>` items align horizontally.
+  * Giving each link a block-level clickable area with padding.
+  * Adding a darker hover state for better feedback and usability.
+
+* **Cryptocurrency “card” layout with flexbox**
+
+  The `.container` class organizes the crypto items:
+
+  ```css
+  .container {
+    display: flex;
+    background-color: DodgerBlue;
+  }
+
+  .container div {
+    background-color: #f1f1f1;
+    margin: 10px;
+    padding: 20px;
+    font-size: 30px;
+  }
+  ```
+
+  The parent `.container` uses `display: flex` to lay out the child `<div>`s in a row. The alternating background colors (blue container, light gray cards) create clear separation and visual hierarchy.
+
+* **Inline styles for specific elements**
+
+  Some styles (e.g., centered headings, the login box, the footer spacing) are applied as inline `style="..."` attributes. This is quick but not ideal for maintainability. A more scalable approach would move these into CSS classes.
+
+Currently, `:root` CSS variables, custom fonts, and media queries are not yet used. They are good candidates for future improvements to make the design more systematic and responsive.
 
 ---
 
-## License
+# Prompt Design
 
-This project is provided for educational purposes. You may add an MIT license if your course requires it.
+While building the page, prompts to AI tools and helpers were designed to be:
+
+1. **Specific about structure and outcome**
+
+   Example prompt styles:
+
+   * “Generate a horizontal navigation bar using an unordered list and flexbox, with a dark background and white links.”
+   * “Create a flex container with multiple cards showing cryptocurrency prices, including margin and padding.”
+
+2. **Visual and goal-oriented rather than only code-oriented**
+
+   Instead of just asking “give me CSS,” prompts focused on the result:
+
+   * “I want a tech-style gradient background for the body.”
+   * “Place a small login form box in the top-right corner, with a white background and light border.”
+
+3. **Iterative**
+
+   The workflow involved:
+
+   * Generating an initial snippet (e.g., a basic nav bar).
+   * Testing it in the browser.
+   * Asking follow-up prompts to tweak spacing, hover effects, and alignment.
+
+4. **Aligned with assignment goals**
+
+   Prompts referenced the lab requirements, such as:
+
+   * Using flexbox for layout.
+   * Adding a gradient.
+   * Including a navigation bar and footer.
+   * Creating a simple showcase page around a chosen theme (in this case, cryptocurrencies).
+
+This prompt design strategy helped keep the generated code close to the project’s learning objectives.
+
+---
+
+# Tool Usage
+
+The main tools used for this project were:
+
+* **Code editor**
+  A browser-based or desktop editor (such as phcode.io or a similar HTML/CSS editor) was used to:
+
+  * Write and format HTML and CSS.
+  * Quickly edit and reload `index.html`.
+
+* **Web browser + Developer Tools**
+
+  * Opened `index.html` directly in the browser to see changes.
+  * Used DevTools (Inspector) to:
+
+    * Check how flexbox was laying out elements.
+    * Adjust margins/padding on the fly.
+    * Experiment with colors and positioning.
+
+* **AI assistant / chat model**
+
+  * Generated starter code for:
+
+    * Navigation bar using flexbox.
+    * Crypto cards layout and basic styling.
+  * Answered conceptual questions like:
+
+    * “Why are my flexbox items not centered?”
+    * “How can I make a gradient background?”
+  * Helped refine wording and structure for this `report.md`.
+
+* **(Optional) Markdown previewer**
+
+  For writing `report.md`, a Markdown preview (either in the editor or online) can be used to confirm that headings and lists render as expected.
+
+---
+
+# Challenges & Solutions
+
+**1. Turning a list into a horizontal navigation bar**
+
+* **Challenge:**
+  By default, a `<ul>` renders as a vertical list with bullet points.
+* **Solution:**
+
+  * Removed `list-style-type`, margin, and padding.
+  * Applied `display: flex;` to the `<ul>`.
+  * Styled `<li> a` links as block elements with padding and hover effects.
+
+---
+
+**2. Positioning the login form in the top-right**
+
+* **Challenge:**
+  Placing a login box in the top-right corner without it interfering with other elements.
+* **Solution:**
+  Used inline CSS with `position: absolute; top: 200px; right: 10px;` on a wrapper `<div>`, plus `background`, `padding`, and `border` to make it readable.
+
+  While this works visually, it’s not yet mobile-friendly and could overlap content on very small screens. This is planned for improvement with a more flexible layout.
+
+---
+
+**3. Maintaining readability on a gradient background**
+
+* **Challenge:**
+  Gradient backgrounds can sometimes make text hard to read.
+* **Solution:**
+  Kept the gradient relatively soft and placed important text (like the login form and crypto prices) inside solid-colored boxes (`white` or `#f1f1f1`). This preserves contrast and readability.
+
+---
+
+**4. Using flexbox correctly for the crypto cards**
+
+* **Challenge:**
+  Ensuring that all example prices align nicely in a row and look like separate cards.
+* **Solution:**
+
+  * Used `.container { display: flex; }` on the parent.
+  * Applied consistent `margin`, `padding`, and `font-size` on the child `<div>` elements.
+  * Tested and adjusted spacing in the browser until the layout looked balanced.
+
+---
+
+# Academic Sources
+
+While working on this project, the following types of academic/technical sources were particularly helpful:
+
+* **Mozilla Developer Network (MDN Web Docs)**
+
+  * HTML reference (for tags like `<blockquote>`, `<cite>`, `<nav>`, `<footer>`).
+  * CSS reference and guides for flexbox, margins, padding, and background gradients.
+
+* **W3C and accessibility guidelines**
+
+  * General best practices for semantic HTML and accessible content.
+  * Tips on contrast and readable font sizes.
+
+* **Web design tutorials and blogs**
+
+  * Examples of navigation bars built with flexbox.
+  * Tutorials on creating card layouts and simple gradients.
+
+These resources informed both the technical code and the design decisions (navigation structure, layout, and basic accessibility).
+
+---
+
+# Future Improvements
+
+There are several planned improvements for the next iteration of this project:
+
+1. **Semantic HTML restructuring**
+
+   * Wrap the navigation and hero content in `<header>` and `<nav>`.
+   * Group the main crypto content in `<main>` with `<section>` and possibly `<article>`.
+   * Use `<aside>` for the quote or for additional info/links.
+   * Keep the credits inside a properly styled `<footer>`.
+
+2. **External CSS and variables**
+
+   * Move all styles into a separate `style.css` file.
+   * Introduce `:root` CSS variables for colors, font sizes, and spacing (for example, `--primary-color`, `--accent-color`).
+   * Reduce or remove inline styles to keep the HTML cleaner.
+
+3. **Typography and accessibility**
+
+   * Import a custom, readable web font.
+   * Ensure sufficient color contrast for all text (especially over the gradient).
+   * Standardize font sizes and line-heights for headings and body text.
+
+4. **Responsive design**
+
+   * Use media queries to adjust layout for smaller screens (e.g., stack nav items, move or resize the login box).
+   * Allow the flexbox container to wrap, so crypto cards display nicely on mobile devices.
+   * Avoid fixed large margins (like the large `margin-top` on the footer text) in favor of more fluid spacing.
+
+5. **Functional upgrades**
+
+   * Replace “fake” crypto prices with live data from a cryptocurrency API (using JavaScript and AJAX/fetch).
+   * Improve the “Download Page” functionality (for example, using proper HTML to PDF tools instead of just `print()`).
+   * Optionally add a “Reader Mode” or “High Contrast Mode” toggle that increases font size and contrast.
+
+By implementing these improvements, the cryptocurrency price tracker can evolve from a static layout demo into a more semantically structured, responsive, and interactive web application.
