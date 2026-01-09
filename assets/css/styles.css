@@ -1,0 +1,47 @@
+/* Custom styles (assignment requirement: 3+ custom/overrides)
+   Keep these minimal for fast load. */
+
+:root{
+  --ct-hero-start: #0f172a;
+  --ct-hero-end: #1d4ed8;
+}
+
+/* 1) Custom hero background (override/extension) */
+.hero-gradient{
+  background: radial-gradient(1200px circle at 20% 10%, rgba(255,255,255,.12), transparent 40%),
+              linear-gradient(135deg, var(--ct-hero-start), var(--ct-hero-end));
+}
+
+/* 2) Improve link focus visibility (accessibility) */
+a:focus-visible, button:focus-visible, .form-control:focus-visible, .form-select:focus-visible{
+  outline: 3px solid rgba(255, 193, 7, .75);
+  outline-offset: 2px;
+}
+
+/* 3) Subtle visual polish for the mini stats */
+.mini-stat{
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.mini-stat:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 0.5rem 1.25rem rgba(0,0,0,.08);
+}
+
+/* Small helper utilities */
+.skip-link{
+  position: absolute;
+  left: .75rem;
+  top: .75rem;
+  background: #fff;
+  padding: .5rem .75rem;
+  border-radius: .5rem;
+  z-index: 2000;
+  transform: translateY(-150%);
+}
+.skip-link:focus{
+  transform: translateY(0);
+}
+
+.letter-spacing{
+  letter-spacing: .08em;
+}

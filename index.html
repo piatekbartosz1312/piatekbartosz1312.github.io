@@ -2,506 +2,715 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>
-      Cryptocurrency Price Tracker – Fake Crypto Prices | Kalkulator kryptowalut (demo)
-    </title>
+    <title>Crypto Price Tracker (Demo) – Bootstrap Student Project</title>
     <meta
       name="description"
-      content="Simple cryptocurrency price tracker with fake demo prices for Bitcoin, Ethereum, Solana, Ripple and Binance Coin. Educational one-pager with English and Polish text about a demo crypto price tracker and kalkulator kryptowalut."
+      content="Responsive Bootstrap demo website: cryptocurrency price tracker with fake prices for learning purposes. Includes FAQ accordion, sign-in modal, contact form, privacy page, 404, sitemap and robots."
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-        font-family: Arial, sans-serif;
-        
-        background: linear-gradient(to right, #d6e9f5, #ffffff);
-      }
+    <!-- Bootstrap CSS (CDN) -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
 
-      h1 {
-        text-align: center;
-        margin-top: 30px;
-      }
+    <!-- Font Awesome (CDN) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      referrerpolicy="no-referrer"
+    />
 
-      h2,
-      p {
-        margin: 10px 0;
-      }
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
 
-      ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        background-color: #444444; 
-        display: flex;
-        justify-content: center;
-      }
-
-      ul li a {
-        display: block;
-        color: white;
-        padding: 14px 20px;
-        text-decoration: none;
-      }
-
-      ul li a:hover {
-        background-color: #222222;
-      }
-
-      .top-bar {
-        max-width: 1000px;
-        margin: 10px auto 0;
-        padding: 0 20px 10px;
-        display: flex;
-        justify-content: flex-end;
-      }
-
-      .top-bar label {
-        font-size: 13px;
-      }
-
-      .content-wrapper {
-        max-width: 1000px;
-        margin: 0 auto;
-        padding: 20px;
-      }
-
-      .container {
-        display: flex;
-        flex-wrap: wrap; 
-        justify-content: center; 
-        background-color: #b7d6ff; 
-        padding: 10px 0;
-      }
-
-      .container div {
-        background-color: #f1f1f1;
-        margin: 10px;
-        padding: 15px 20px;
-        font-size: 20px; 
-        text-align: center;
-        min-width: 180px;
-      }
-
-      .signin-box {
-        float: right;
-        background: #ffffff;
-        padding: 10px 15px;
-        border: 1px solid #dddddd;
-        margin: 10px 0 20px 20px;
-      }
-
-      .signin-box label {
-        display: block;
-        font-size: 12px;
-        margin-top: 5px;
-      }
-
-      .signin-box input {
-        width: 180px;
-        padding: 4px;
-        margin-bottom: 6px;
-        border: 1px solid #cccccc;
-      }
-
-      .signin-box button {
-        margin-top: 4px;
-        padding: 5px 10px;
-      }
-
-      hr {
-        margin: 30px auto;
-        max-width: 90%;
-        border: 0;
-        border-top: 1px solid #cccccc;
-      }
-
-      blockquote {
-        margin: 20px auto 5px;
-        max-width: 500px;
-        border-left: 4px solid #999999;
-        padding-left: 10px;
-        font-style: italic;
-      }
-
-      .text-center {
-        text-align: center;
-      }
-
-      section.crypto-info {
-        max-width: 900px;
-        margin: 20px auto;
-        padding: 20px;
-        background: rgba(255, 255, 255, 0.9);
-      }
-
-      button.download-btn {
-        display: block;
-        margin: 30px auto 0;
-        padding: 8px 16px;
-      }
-
-      footer {
-        margin-top: 40px;
-        text-align: center;
-      }
-
-      footer p {
-        font-size: 12px;
-        margin: 10px 0 20px;
-      }
-    </style>
-
+    <!-- Minimal structured data -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "WebPage",
-        "name": "Cryptocurrency Price Tracker Demo / Kalkulator kryptowalut",
-        "description": "Educational cryptocurrency price tracker with fake demo prices in English and Polish, used as a demo kalkulator kryptowalut.",
-        "inLanguage": ["en", "pl"],
-        "url": "https://example.com/crypto-price-tracker-demo",
-        "keywords": [
-          "cryptocurrency price tracker",
-          "crypto price tracker",
-          "fake crypto prices",
-          "kalkulator kryptowalut",
-          "kurs kryptowalut",
-          "przelicznik kryptowalut"
-        ],
-        "creator": [
-          {
-            "@type": "Person",
-            "name": "Bartosz Piątek"
-          },
-          {
-            "@type": "Person",
-            "name": "Alexander Gawrylo"
-          }
-        ]
+        "name": "Crypto Price Tracker (Demo) – Bootstrap Student Project",
+        "description": "Educational one-pager with demo cryptocurrency prices, built with Bootstrap. No personal data collected or stored.",
+        "inLanguage": ["en", "pl"]
       }
     </script>
   </head>
 
   <body>
-    <ul>
-      <li><a href="#home" data-i18n-key="nav.home">Home</a></li>
-      <li><a href="#news" data-i18n-key="nav.news">News</a></li>
-      <li><a href="#contact" data-i18n-key="nav.contact">Contact</a></li>
-      <li><a href="#about" data-i18n-key="nav.about">About</a></li>
-    </ul>
+    <!-- Skip link for accessibility -->
+    <a class="visually-hidden-focusable skip-link" href="#main">Skip to content</a>
 
-    <div class="top-bar">
-      <label>
-        <span data-i18n-key="ui.language">Language:</span>
-        <select id="langSelect">
-          <option value="en">English</option>
-          <option value="pl">Polski</option>
-        </select>
-      </label>
-    </div>
-
-    <div class="content-wrapper" id="home">
-      <div class="signin-box">
-        <form>
-          <label data-i18n-key="form.username.label">Username:</label>
-          <input
-            type="text"
-            data-i18n-placeholder-key="form.username.placeholder"
-            placeholder="demo-user"
-          /><br />
-
-          <label data-i18n-key="form.password.label">Password:</label>
-          <input
-            type="Password"
-            data-i18n-placeholder-key="form.password.placeholder"
-            placeholder="demo-password"
-          /><br />
-
-          <button type="submit" data-i18n-key="form.button">Sign In</button>
-        </form>
-      </div>
-
-      <h1 data-i18n-key="page.title">
-        The Most ADVANCED Cryptocurrency Price Tracker!
-      </h1>
-      <p class="text-center" data-i18n-html-key="page.subtitle.html">
-        This website allows you to check <strong>live crypto prices</strong> – or at least fake demo
-        prices that look like a real <strong>cryptocurrency price tracker</strong>.
-      </p>
-
-      <hr />
-
-      <h2 style="padding: 0 20px;" data-i18n-key="prices.title">
-        Examples of cryptocurrencies with 'fake' prices!:
-      </h2>
+    <!-- Navbar (Bootstrap component) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
       <div class="container">
-        <div data-i18n-key="prices.xrp">Ripple (XRP) : $1.92</div>
-        <div data-i18n-key="prices.sol">Solana (SOL) : $129.38</div>
-        <div data-i18n-key="prices.btc">Bitcoin (BTC) : $84,728.00</div>
-        <div data-i18n-key="prices.eth">Ethereum (ETH) : $2,760.99</div>
-        <div data-i18n-key="prices.bnb">Binance Coin (BNB) : $831.65</div>
-      </div>
+        <a class="navbar-brand d-flex align-items-center gap-2" href="#home">
+          <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+          <span>CryptoTracker <span class="badge text-bg-warning text-dark ms-1">Demo</span></span>
+        </a>
 
-      <div class="text-center">
-        <blockquote>
-          <p data-i18n-key="quote.text">
-            Bitcoin is a technological tour de force.
-          </p>
-        </blockquote>
-        <p data-i18n-key="quote.author">
-          —Bill Gates, co-founder of Microsoft, investor, and philanthropist
-        </p>
-
-        <section
-          class="crypto-info"
-          lang="en"
-          aria-label="Crypto explanation"
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarMain"
+          aria-controls="navbarMain"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
         >
-          <h2
-            style="text-align: center; margin-top: 0;"
-            data-i18n-key="section.about.title"
-          >
-            What Is Cryptocurrency?
-          </h2>
-          <p
-            style="font-size: 16px; line-height: 1.6;"
-            data-i18n-html-key="section.about.p1.html"
-          >
-            Cryptocurrencies are digital assets secured by cryptography and powered by decentralized
-            networks, usually based on blockchain technology. Instead of relying on a central
-            authority like a bank, transactions are verified by a global network of computers. This
-            makes the system transparent, hard to censor, and available 24/7 anywhere in the world.
-          </p>
-          <p
-            style="font-size: 16px; line-height: 1.6;"
-            data-i18n-html-key="section.about.p2.html"
-          >
-            The first and most famous cryptocurrency is <strong>Bitcoin</strong>, often called
-            digital gold because of its limited supply and use as a store of value. Other coins like
-            <strong>Ethereum</strong> add extra features such as smart contracts, which are pieces of
-            code that run automatically when certain conditions are met.
-          </p>
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-          <h3
-            style="margin-top: 25px;"
-            data-i18n-key="section.why.title"
-          >
-            Why Do People Care About Crypto?
-          </h3>
-          <p
-            style="font-size: 16px; line-height: 1.6;"
-            data-i18n-key="section.why.intro"
-          >
-            Crypto isn’t just about price charts and speculation. For many people, it’s interesting
-            because it:
-          </p>
-          <ul
-            style="
-              font-size: 16px;
-              line-height: 1.6;
-              padding-left: 20px;
-              text-align: left;
-            "
-          >
-            <li data-i18n-html-key="section.why.li1.html">
-              <strong>Enables borderless payments</strong> – you can send value to someone on the
-              other side of the world in minutes.
+        <div class="collapse navbar-collapse" id="navbarMain">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
+            <li class="nav-item">
+              <a class="nav-link" href="#home" data-i18n-key="nav.home">Home</a>
             </li>
-            <li data-i18n-html-key="section.why.li2.html">
-              <strong>Offers financial access</strong> – anyone with an internet connection can
-              create a wallet and participate.
+            <li class="nav-item">
+              <a class="nav-link" href="#prices" data-i18n-key="nav.prices">Prices</a>
             </li>
-            <li data-i18n-html-key="section.why.li3.html">
-              <strong>Supports programmable money</strong> – smart contracts allow complex financial
-              logic without a middleman.
+            <li class="nav-item">
+              <a class="nav-link" href="#news" data-i18n-key="nav.news">Updates</a>
             </li>
-            <li data-i18n-html-key="section.why.li4.html">
-              <strong>Creates new digital assets</strong> – tokens and NFTs represent everything
-              from art to in-game items.
+            <li class="nav-item">
+              <a class="nav-link" href="#faq" data-i18n-key="nav.faq">FAQ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact" data-i18n-key="nav.contact">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="privacy.html">
+                <i class="fa-solid fa-shield-halved me-1" aria-hidden="true"></i>
+                <span data-i18n-key="nav.privacy">Privacy</span>
+              </a>
+            </li>
+
+            <li class="nav-item ms-lg-3">
+              <button
+                class="btn btn-outline-light btn-sm"
+                data-bs-toggle="modal"
+                data-bs-target="#signinModal"
+              >
+                <i class="fa-solid fa-right-to-bracket me-1" aria-hidden="true"></i>
+                <span data-i18n-key="nav.signin">Sign in</span>
+              </button>
+            </li>
+
+            <li class="nav-item ms-lg-3">
+              <label class="d-flex align-items-center gap-2 my-2 my-lg-0">
+                <span class="text-white-50 small" data-i18n-key="ui.language">Language</span>
+                <select id="langSelect" class="form-select form-select-sm w-auto">
+                  <option value="en">EN</option>
+                  <option value="pl">PL</option>
+                </select>
+              </label>
             </li>
           </ul>
-
-          <h3
-            style="margin-top: 25px;"
-            data-i18n-key="section.risks.title"
-          >
-            Risks and Things to Watch Out For
-          </h3>
-          <p
-            style="font-size: 16px; line-height: 1.6;"
-            data-i18n-html-key="section.risks.p1.html"
-          >
-            The crypto market can be <strong>extremely volatile</strong>. Prices can rise or fall
-            dramatically in a short time, and there is always a risk of losing money. On top of that,
-            users need to be careful with security: if you lose access to your private keys or
-            recovery phrases, you can lose access to your funds permanently.
-          </p>
-          <p
-            style="font-size: 16px; line-height: 1.6; margin-bottom: 0;"
-            data-i18n-html-key="section.risks.p2.html"
-          >
-            Because of these risks, many people treat crypto as a high-risk, experimental part of the
-            financial world. Tools like this simple cryptocurrency price tracker with fake prices help
-            users follow the market and learn how such pages are built.
-          </p>
-        </section>
+        </div>
       </div>
+    </nav>
 
-      <button
-        class="download-btn"
-        onclick="download()"
-        data-i18n-key="button.download"
-      >
-        Download Page
-      </button>
+    <main id="main">
+      <!-- Hero / Landing -->
+      <header id="home" class="hero-gradient">
+        <div class="container py-5">
+          <div class="row align-items-center g-4">
+            <div class="col-12 col-lg-7">
+              <p class="text-uppercase text-white-50 mb-2 letter-spacing" data-i18n-key="hero.kicker">
+                Student project • Bootstrap 5
+              </p>
+              <h1 class="display-5 fw-bold text-white mb-3" data-i18n-key="hero.title">
+                Cryptocurrency Price Tracker (Demo)
+              </h1>
+              <p class="lead text-white-75 mb-4" data-i18n-html-key="hero.subtitle.html">
+                Explore a responsive Bootstrap layout with <strong>fake demo prices</strong>, components, and utilities.
+                Built to practice the grid system, UI patterns, and deployment basics.
+              </p>
+
+              <div class="d-flex flex-wrap gap-2">
+                <a class="btn btn-warning btn-lg" href="#prices">
+                  <i class="fa-solid fa-coins me-2" aria-hidden="true"></i>
+                  <span data-i18n-key="hero.ctaPrimary">View demo prices</span>
+                </a>
+                <button class="btn btn-outline-light btn-lg" data-bs-toggle="modal" data-bs-target="#signinModal">
+                  <i class="fa-regular fa-user me-2" aria-hidden="true"></i>
+                  <span data-i18n-key="hero.ctaSecondary">Open sign-in modal</span>
+                </button>
+              </div>
+
+              <p class="small text-white-50 mt-3 mb-0" data-i18n-key="hero.note">
+                Note: This page does not fetch real market data.
+              </p>
+            </div>
+
+            <div class="col-12 col-lg-5">
+              <div class="card shadow-lg border-0 rounded-4">
+                <div class="card-body p-4">
+                  <div class="d-flex align-items-center justify-content-between mb-3">
+                    <h2 class="h5 mb-0" data-i18n-key="hero.widgetTitle">Today’s demo snapshot</h2>
+                    <span class="badge text-bg-success" id="snapshotStatus">LIVE</span>
+                  </div>
+                  <div class="row g-3">
+                    <div class="col-6">
+                      <div class="mini-stat p-3 rounded-3 bg-light">
+                        <div class="small text-secondary">BTC</div>
+                        <div class="fw-semibold" id="snapBTC">$84,728</div>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="mini-stat p-3 rounded-3 bg-light">
+                        <div class="small text-secondary">ETH</div>
+                        <div class="fw-semibold" id="snapETH">$2,760</div>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="mini-stat p-3 rounded-3 bg-light">
+                        <div class="small text-secondary">SOL</div>
+                        <div class="fw-semibold" id="snapSOL">$129</div>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="mini-stat p-3 rounded-3 bg-light">
+                        <div class="small text-secondary">XRP</div>
+                        <div class="fw-semibold" id="snapXRP">$1.92</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between mt-3">
+                    <span class="small text-secondary" data-i18n-key="hero.widgetFootnote">Randomized locally on refresh</span>
+                    <button class="btn btn-sm btn-outline-primary" type="button" id="refreshPricesBtn">
+                      <i class="fa-solid fa-rotate me-1" aria-hidden="true"></i>
+                      <span data-i18n-key="hero.refresh">Refresh</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <p class="small text-white-50 mt-3 mb-0">
+                <i class="fa-solid fa-lock me-1" aria-hidden="true"></i>
+                <span data-i18n-key="hero.security">No login data is saved.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Prices / Content section with grid + cards -->
+      <section id="prices" class="py-5">
+        <div class="container">
+          <div class="row align-items-end mb-4">
+            <div class="col-12 col-lg-8">
+              <h2 class="fw-bold mb-1" data-i18n-key="prices.title">Demo crypto prices</h2>
+              <p class="text-secondary mb-0" data-i18n-key="prices.subtitle">
+                Cards below use the Bootstrap grid and utilities. Values are fake and for learning only.
+              </p>
+            </div>
+            <div class="col-12 col-lg-4 text-lg-end mt-3 mt-lg-0">
+              <span class="badge rounded-pill text-bg-light border">
+                <i class="fa-solid fa-circle-info me-1 text-primary" aria-hidden="true"></i>
+                <span data-i18n-key="prices.badge">Bootstrap cards + grid</span>
+              </span>
+            </div>
+          </div>
+
+          <div class="row g-4">
+            <div class="col-12 col-sm-6 col-lg-4">
+              <div class="card h-100 shadow-sm border-0 rounded-4">
+                <div class="card-body p-4">
+                  <div class="d-flex justify-content-between align-items-start mb-3">
+                    <div>
+                      <h3 class="h5 mb-0">
+                        <i class="fa-brands fa-bitcoin text-warning me-2" aria-hidden="true"></i>
+                        Bitcoin (BTC)
+                      </h3>
+                      <p class="text-secondary small mb-0" data-i18n-key="prices.cardNote">Store-of-value narrative</p>
+                    </div>
+                    <span class="badge text-bg-dark">#1</span>
+                  </div>
+                  <p class="display-6 fw-bold mb-1" id="priceBTC">$84,728.00</p>
+                  <p class="small text-secondary mb-0" data-i18n-key="prices.disclaimer">
+                    Fake number; not investment advice.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-4">
+              <div class="card h-100 shadow-sm border-0 rounded-4">
+                <div class="card-body p-4">
+                  <div class="d-flex justify-content-between align-items-start mb-3">
+                    <div>
+                      <h3 class="h5 mb-0">
+                        <i class="fa-brands fa-ethereum text-primary me-2" aria-hidden="true"></i>
+                        Ethereum (ETH)
+                      </h3>
+                      <p class="text-secondary small mb-0" data-i18n-key="prices.cardNote2">Smart contract platform</p>
+                    </div>
+                    <span class="badge text-bg-dark">#2</span>
+                  </div>
+                  <p class="display-6 fw-bold mb-1" id="priceETH">$2,760.99</p>
+                  <p class="small text-secondary mb-0" data-i18n-key="prices.disclaimer">
+                    Fake number; not investment advice.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-4">
+              <div class="card h-100 shadow-sm border-0 rounded-4">
+                <div class="card-body p-4">
+                  <div class="d-flex justify-content-between align-items-start mb-3">
+                    <div>
+                      <h3 class="h5 mb-0">
+                        <i class="fa-solid fa-bolt text-warning me-2" aria-hidden="true"></i>
+                        Solana (SOL)
+                      </h3>
+                      <p class="text-secondary small mb-0" data-i18n-key="prices.cardNote3">High-throughput chain</p>
+                    </div>
+                    <span class="badge text-bg-dark">#3</span>
+                  </div>
+                  <p class="display-6 fw-bold mb-1" id="priceSOL">$129.38</p>
+                  <p class="small text-secondary mb-0" data-i18n-key="prices.disclaimer">
+                    Fake number; not investment advice.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-4">
+              <div class="card h-100 shadow-sm border-0 rounded-4">
+                <div class="card-body p-4">
+                  <div class="d-flex justify-content-between align-items-start mb-3">
+                    <div>
+                      <h3 class="h5 mb-0">
+                        <i class="fa-solid fa-wave-square text-info me-2" aria-hidden="true"></i>
+                        Ripple (XRP)
+                      </h3>
+                      <p class="text-secondary small mb-0" data-i18n-key="prices.cardNote4">Payments focus</p>
+                    </div>
+                    <span class="badge text-bg-dark">#4</span>
+                  </div>
+                  <p class="display-6 fw-bold mb-1" id="priceXRP">$1.92</p>
+                  <p class="small text-secondary mb-0" data-i18n-key="prices.disclaimer">
+                    Fake number; not investment advice.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-4">
+              <div class="card h-100 shadow-sm border-0 rounded-4">
+                <div class="card-body p-4">
+                  <div class="d-flex justify-content-between align-items-start mb-3">
+                    <div>
+                      <h3 class="h5 mb-0">
+                        <i class="fa-solid fa-circle-nodes text-success me-2" aria-hidden="true"></i>
+                        Binance Coin (BNB)
+                      </h3>
+                      <p class="text-secondary small mb-0" data-i18n-key="prices.cardNote5">Exchange ecosystem</p>
+                    </div>
+                    <span class="badge text-bg-dark">#5</span>
+                  </div>
+                  <p class="display-6 fw-bold mb-1" id="priceBNB">$831.65</p>
+                  <p class="small text-secondary mb-0" data-i18n-key="prices.disclaimer">
+                    Fake number; not investment advice.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Utility/demo block -->
+            <div class="col-12 col-lg-4">
+              <div class="h-100 p-4 border rounded-4 bg-light">
+                <h3 class="h5 fw-bold mb-2" data-i18n-key="prices.learnTitle">What this section demonstrates</h3>
+                <ul class="list-unstyled mb-0">
+                  <li class="d-flex gap-2 mb-2">
+                    <i class="fa-solid fa-table-columns text-primary mt-1" aria-hidden="true"></i>
+                    <span data-i18n-key="prices.learn1">Bootstrap grid: <code>.container</code>, <code>.row</code>, <code>.col-*</code></span>
+                  </li>
+                  <li class="d-flex gap-2 mb-2">
+                    <i class="fa-solid fa-cube text-primary mt-1" aria-hidden="true"></i>
+                    <span data-i18n-key="prices.learn2">Components: Navbar, Cards, Modal, Accordion, Carousel</span>
+                  </li>
+                  <li class="d-flex gap-2">
+                    <i class="fa-solid fa-wand-magic-sparkles text-primary mt-1" aria-hidden="true"></i>
+                    <span data-i18n-key="prices.learn3">Utilities: spacing, typography, flex, colors, shadows, borders</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center mt-5">
+            <blockquote class="blockquote">
+              <p class="mb-1" data-i18n-key="quote.text">Bitcoin is a technological tour de force.</p>
+              <footer class="blockquote-footer" data-i18n-key="quote.author">
+                Bill Gates (attributed)
+              </footer>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      <!-- Updates / Carousel (advanced component) -->
+      <section id="news" class="py-5 bg-body-tertiary">
+        <div class="container">
+          <div class="row mb-4 align-items-center">
+            <div class="col-12 col-lg-8">
+              <h2 class="fw-bold mb-1" data-i18n-key="news.title">Updates & tips</h2>
+              <p class="text-secondary mb-0" data-i18n-key="news.subtitle">
+                Carousel is an advanced Bootstrap component (requires Bootstrap JS).
+              </p>
+            </div>
+            <div class="col-12 col-lg-4 text-lg-end mt-3 mt-lg-0">
+              <a class="btn btn-outline-primary" href="#contact">
+                <i class="fa-regular fa-paper-plane me-2" aria-hidden="true"></i>
+                <span data-i18n-key="news.cta">Ask a question</span>
+              </a>
+            </div>
+          </div>
+
+          <div id="tipsCarousel" class="carousel slide shadow-sm rounded-4 overflow-hidden" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#tipsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#tipsCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#tipsCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="p-5 bg-dark text-white">
+                  <h3 class="h4 fw-bold">
+                    <i class="fa-solid fa-mobile-screen-button me-2" aria-hidden="true"></i>
+                    <span data-i18n-key="news.slide1.title">Mobile-first layout</span>
+                  </h3>
+                  <p class="mb-0 text-white-75" data-i18n-key="news.slide1.text">
+                    Resize the window to see how the grid and navbar adapt from phone to desktop.
+                  </p>
+                </div>
+              </div>
+
+              <div class="carousel-item">
+                <div class="p-5 bg-primary text-white">
+                  <h3 class="h4 fw-bold">
+                    <i class="fa-solid fa-layer-group me-2" aria-hidden="true"></i>
+                    <span data-i18n-key="news.slide2.title">Components in action</span>
+                  </h3>
+                  <p class="mb-0 text-white-75" data-i18n-key="news.slide2.text">
+                    Cards, carousel, accordion and modal demonstrate production-ready UI patterns.
+                  </p>
+                </div>
+              </div>
+
+              <div class="carousel-item">
+                <div class="p-5 bg-success text-white">
+                  <h3 class="h4 fw-bold">
+                    <i class="fa-solid fa-gauge-high me-2" aria-hidden="true"></i>
+                    <span data-i18n-key="news.slide3.title">Keep it lightweight</span>
+                  </h3>
+                  <p class="mb-0 text-white-75" data-i18n-key="news.slide3.text">
+                    Use CDNs, compress assets, and keep scripts minimal for fast loading.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#tipsCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#tipsCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ / Accordion (advanced component) -->
+      <section id="faq" class="py-5">
+        <div class="container">
+          <div class="row mb-4">
+            <div class="col-12 col-lg-8">
+              <h2 class="fw-bold mb-1" data-i18n-key="faq.title">FAQ</h2>
+              <p class="text-secondary mb-0" data-i18n-key="faq.subtitle">
+                Accordion is another advanced Bootstrap component.
+              </p>
+            </div>
+          </div>
+
+          <div class="row g-4">
+            <div class="col-12 col-lg-7">
+              <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                  <h3 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                      <span data-i18n-key="faq.q1">Are these real crypto prices?</span>
+                    </button>
+                  </h3>
+                  <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body" data-i18n-key="faq.a1">
+                      No. All numbers are fake demo values to practice layouts, components, and basic JavaScript.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h3 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                      <span data-i18n-key="faq.q2">What Bootstrap features are used?</span>
+                    </button>
+                  </h3>
+                  <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body" data-i18n-key="faq.a2">
+                      Grid system, navbar, cards, carousel, modal, accordion, and many utility classes for spacing, typography, flex, and color.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h3 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                      <span data-i18n-key="faq.q3">Do you store form data?</span>
+                    </button>
+                  </h3>
+                  <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body" data-i18n-key="faq.a3">
+                      No. This site is a student project. Any “submission” is handled only in your browser and is not stored.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-lg-5">
+              <div class="p-4 border rounded-4 h-100">
+                <h3 class="h5 fw-bold mb-2" data-i18n-key="about.title">About this demo</h3>
+                <p class="text-secondary mb-3" data-i18n-key="about.text">
+                  This project exists to demonstrate front‑end production basics: responsive layout, clean structure, and deployable static files.
+                </p>
+                <div class="d-flex flex-wrap gap-2">
+                  <a class="btn btn-outline-secondary btn-sm" href="privacy.html">
+                    <i class="fa-solid fa-shield-halved me-1" aria-hidden="true"></i>
+                    <span data-i18n-key="about.privacyBtn">Read privacy info</span>
+                  </a>
+                  <a class="btn btn-outline-secondary btn-sm" href="#contact">
+                    <i class="fa-regular fa-envelope me-1" aria-hidden="true"></i>
+                    <span data-i18n-key="about.contactBtn">Contact section</span>
+                  </a>
+                </div>
+                <hr class="my-4" />
+                <p class="small text-secondary mb-0" data-i18n-key="about.tech">
+                  Built with Bootstrap 5 + Font Awesome via CDN. Custom styles in <code>assets/css/styles.css</code>.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact section (Bootstrap form controls) -->
+      <section id="contact" class="py-5 bg-body-tertiary">
+        <div class="container">
+          <div class="row mb-4 align-items-center">
+            <div class="col-12 col-lg-7">
+              <h2 class="fw-bold mb-1" data-i18n-key="contact.title">Contact</h2>
+              <p class="text-secondary mb-0" data-i18n-key="contact.subtitle">
+                For the assignment: form uses Bootstrap controls. Submissions are not stored.
+              </p>
+            </div>
+            <div class="col-12 col-lg-5 text-lg-end mt-3 mt-lg-0">
+              <span class="badge rounded-pill text-bg-light border">
+                <i class="fa-solid fa-scale-balanced me-1 text-primary" aria-hidden="true"></i>
+                <span data-i18n-key="contact.gdprBadge">GDPR/Privacy transparency</span>
+              </span>
+            </div>
+          </div>
+
+          <div class="row g-4">
+            <div class="col-12 col-lg-6">
+              <div class="card border-0 shadow-sm rounded-4">
+                <div class="card-body p-4">
+                  <form id="contactForm" novalidate>
+                    <div class="row g-3">
+                      <div class="col-12 col-md-6">
+                        <label class="form-label" for="name" data-i18n-key="contact.name">Name</label>
+                        <input class="form-control" id="name" name="name" type="text" required />
+                        <div class="invalid-feedback" data-i18n-key="contact.validation.name">Please enter your name.</div>
+                      </div>
+
+                      <div class="col-12 col-md-6">
+                        <label class="form-label" for="email" data-i18n-key="contact.email">Email</label>
+                        <input class="form-control" id="email" name="email" type="email" required />
+                        <div class="invalid-feedback" data-i18n-key="contact.validation.email">Please enter a valid email.</div>
+                      </div>
+
+                      <div class="col-12">
+                        <label class="form-label" for="message" data-i18n-key="contact.message">Message</label>
+                        <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                        <div class="invalid-feedback" data-i18n-key="contact.validation.message">Please enter a message.</div>
+                      </div>
+
+                      <div class="col-12 d-flex flex-wrap gap-2 align-items-center">
+                        <button class="btn btn-primary" type="submit">
+                          <i class="fa-regular fa-paper-plane me-2" aria-hidden="true"></i>
+                          <span data-i18n-key="contact.submit">Send (demo)</span>
+                        </button>
+                        <a class="btn btn-outline-secondary" href="privacy.html">
+                          <i class="fa-solid fa-shield-halved me-2" aria-hidden="true"></i>
+                          <span data-i18n-key="contact.privacy">Privacy info</span>
+                        </a>
+                        <span class="small text-secondary ms-md-auto" data-i18n-key="contact.notice">
+                          No data is stored.
+                        </span>
+                      </div>
+                    </div>
+                  </form>
+
+                  <div class="alert alert-success mt-3 d-none" id="contactSuccess" role="alert">
+                    <i class="fa-solid fa-check me-2" aria-hidden="true"></i>
+                    <span data-i18n-key="contact.success">Thanks! This is a demo — nothing was sent.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-lg-6">
+              <div class="p-4 border rounded-4 h-100">
+                <h3 class="h5 fw-bold mb-2" data-i18n-key="gdpr.title">Privacy / GDPR (short)</h3>
+                <ul class="list-unstyled mb-0">
+                  <li class="d-flex gap-2 mb-2">
+                    <i class="fa-solid fa-graduation-cap text-primary mt-1" aria-hidden="true"></i>
+                    <span data-i18n-key="gdpr.li1">This website is a student project for learning Bootstrap.</span>
+                  </li>
+                  <li class="d-flex gap-2 mb-2">
+                    <i class="fa-solid fa-database text-primary mt-1" aria-hidden="true"></i>
+                    <span data-i18n-key="gdpr.li2">No personal data is collected or stored on a server.</span>
+                  </li>
+                  <li class="d-flex gap-2 mb-2">
+                    <i class="fa-solid fa-envelope-open-text text-primary mt-1" aria-hidden="true"></i>
+                    <span data-i18n-key="gdpr.li3">Contact form inputs (if used) remain only in your browser and are not retained.</span>
+                  </li>
+                  <li class="d-flex gap-2">
+                    <i class="fa-solid fa-link text-primary mt-1" aria-hidden="true"></i>
+                    <span data-i18n-key="gdpr.li4">Read the full details on the <a href="privacy.html">Privacy page</a>.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer (structured links) -->
+      <footer class="py-4 bg-dark text-white">
+        <div class="container">
+          <div class="row g-3 align-items-center">
+            <div class="col-12 col-md-6">
+              <div class="d-flex flex-wrap align-items-center gap-2">
+                <i class="fa-solid fa-code" aria-hidden="true"></i>
+                <span class="small">
+                  <span data-i18n-key="footer.madeBy">Made by</span>
+                  <span class="fw-semibold">Bartosz Piątek</span> &amp;
+                  <span class="fw-semibold">Alexander Gawrylo</span>
+                </span>
+              </div>
+              <div class="small text-white-50 mt-1">
+                <span data-i18n-key="footer.note">Bootstrap + Font Awesome via CDN • No tracking</span>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6 text-md-end">
+              <ul class="list-inline mb-0">
+                <li class="list-inline-item">
+                  <a class="link-light link-opacity-75-hover text-decoration-none" href="#home">
+                    <i class="fa-solid fa-house me-1" aria-hidden="true"></i><span data-i18n-key="footer.home">Home</span>
+                  </a>
+                </li>
+                <li class="list-inline-item ms-3">
+                  <a class="link-light link-opacity-75-hover text-decoration-none" href="privacy.html">
+                    <i class="fa-solid fa-shield-halved me-1" aria-hidden="true"></i><span data-i18n-key="footer.privacy">Privacy</span>
+                  </a>
+                </li>
+                <li class="list-inline-item ms-3">
+                  <a class="link-light link-opacity-75-hover text-decoration-none" href="sitemap.xml">
+                    <i class="fa-solid fa-sitemap me-1" aria-hidden="true"></i><span>Sitemap</span>
+                  </a>
+                </li>
+                <li class="list-inline-item ms-3">
+                  <a class="link-light link-opacity-75-hover text-decoration-none" href="404.html">
+                    <i class="fa-solid fa-triangle-exclamation me-1" aria-hidden="true"></i><span>404</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <!-- Sign-in modal (Bootstrap component) -->
+    <div class="modal fade" id="signinModal" tabindex="-1" aria-labelledby="signinModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content rounded-4">
+          <div class="modal-header">
+            <h2 class="modal-title fs-5" id="signinModalLabel">
+              <i class="fa-regular fa-user me-2" aria-hidden="true"></i>
+              <span data-i18n-key="modal.title">Sign in (demo)</span>
+            </h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="signinForm" novalidate>
+              <div class="mb-3">
+                <label for="username" class="form-label" data-i18n-key="form.username.label">Username</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="username"
+                  placeholder="demo-user"
+                  required
+                />
+                <div class="invalid-feedback" data-i18n-key="form.username.validation">Please enter a username.</div>
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label" data-i18n-key="form.password.label">Password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password"
+                  placeholder="demo-password"
+                  required
+                />
+                <div class="invalid-feedback" data-i18n-key="form.password.validation">Please enter a password.</div>
+              </div>
+              <div class="d-flex justify-content-between align-items-center">
+                <small class="text-secondary" data-i18n-key="modal.note">No credentials are saved.</small>
+                <button class="btn btn-primary" type="submit">
+                  <i class="fa-solid fa-right-to-bracket me-2" aria-hidden="true"></i>
+                  <span data-i18n-key="form.button">Sign In</span>
+                </button>
+              </div>
+            </form>
+
+            <div class="alert alert-info mt-3 d-none" id="signinInfo" role="alert">
+              <i class="fa-solid fa-circle-info me-2" aria-hidden="true"></i>
+              <span data-i18n-key="modal.success">Signed in (demo). No data was sent.</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <footer>
-      <p>
-        CREATED BY BARTOSZ PIĄTEK AND ALEXANDER GAWRYLO
-      </p>
-    </footer>
+    <!-- Bootstrap JS bundle (CDN) -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
 
-    <script>
-      const MESSAGES = {
-        en: {
-          "ui.language": "Language:",
-          "nav.home": "Home",
-          "nav.news": "News",
-          "nav.contact": "Contact",
-          "nav.about": "About",
-          "form.username.label": "Username:",
-          "form.password.label": "Password:",
-          "form.password.placeholder": "password",
-          "form.username.placeholder": "user",
-          "form.button": "Sign In",
-          "page.title": "The Most ADVANCED Cryptocurrency Price Tracker!",
-          "page.subtitle.html":
-            "This website allows you to check <strong>live crypto prices</strong> – or at least fake demo prices that look like a real <strong>cryptocurrency price tracker</strong>.",
-          "prices.title": "Examples of cryptocurrencies with 'fake' prices!:",
-          "prices.xrp": "Ripple (XRP) : $1.92",
-          "prices.sol": "Solana (SOL) : $129.38",
-          "prices.btc": "Bitcoin (BTC) : $84,728.00",
-          "prices.eth": "Ethereum (ETH) : $2,760.99",
-          "prices.bnb": "Binance Coin (BNB) : $831.65",
-          "quote.text": "Bitcoin is a technological tour de force.",
-          "quote.author":
-            "—Bill Gates, co-founder of Microsoft, investor, and philanthropist",
-          "section.about.title": "What Is Cryptocurrency?",
-          "section.about.p1.html":
-            "Cryptocurrencies are digital assets secured by cryptography and powered by decentralized networks, usually based on blockchain technology. Instead of relying on a central authority like a bank, transactions are verified by a global network of computers. This makes the system transparent, hard to censor, and available 24/7 anywhere in the world.",
-          "section.about.p2.html":
-            "The first and most famous cryptocurrency is <strong>Bitcoin</strong>, often called digital gold because of its limited supply and use as a store of value. Other coins like <strong>Ethereum</strong> add extra features such as smart contracts, which are pieces of code that run automatically when certain conditions are met.",
-          "section.why.title": "Why Do People Care About Crypto?",
-          "section.why.intro":
-            "Crypto isn’t just about price charts and speculation. For many people, it’s interesting because it:",
-          "section.why.li1.html":
-            "<strong>Enables borderless payments</strong> – you can send value to someone on the other side of the world in minutes.",
-          "section.why.li2.html":
-            "<strong>Offers financial access</strong> – anyone with an internet connection can create a wallet and participate.",
-          "section.why.li3.html":
-            "<strong>Supports programmable money</strong> – smart contracts allow complex financial logic without a middleman.",
-          "section.why.li4.html":
-            "<strong>Creates new digital assets</strong> – tokens and NFTs represent everything from art to in-game items.",
-          "section.risks.title": "Risks and Things to Watch Out For",
-          "section.risks.p1.html":
-            "The crypto market can be <strong>extremely volatile</strong>. Prices can rise or fall dramatically in a short time, and there is always a risk of losing money. On top of that, users need to be careful with security: if you lose access to your private keys or recovery phrases, you can lose access to your funds permanently.",
-          "section.risks.p2.html":
-            "Because of these risks, many people treat crypto as a high-risk, experimental part of the financial world. Tools like this simple cryptocurrency price tracker with fake prices help users follow the market and learn how such pages are built.",
-          "button.download": "Download Page"
-        },
-
-        pl: {
-          "ui.language": "Język:",
-          "nav.home": "Strona główna",
-          "nav.news": "Nowości",
-          "nav.contact": "Kontakt",
-          "nav.about": "O nas",
-          "form.username.label": "Nazwa użytkownika:",
-          "form.password.label": "Hasło:",
-          "form.username.placeholder": "uzytkownik",
-          "form.password.placeholder": "haslo",
-          "form.button": "Zaloguj",
-          "page.title": "Najbardziej ZAAWANSOWANY tracker kryptowalut!",
-          "page.subtitle.html":
-            "Ta strona pozwala sprawdzić <strong>kurs kryptowalut</strong> – w wersji demo z fikcyjnymi cenami, które wyglądają jak prosty <strong>kalkulator kryptowalut</strong>.",
-          "prices.title": "Przykładowe kryptowaluty z fikcyjnymi cenami:",
-          "prices.xrp": "Ripple (XRP) : $1,92",
-          "prices.sol": "Solana (SOL) : $129,38",
-          "prices.btc": "Bitcoin (BTC) : $84 728,00",
-          "prices.eth": "Ethereum (ETH) : $2 760,99",
-          "prices.bnb": "Binance Coin (BNB) : $831,65",
-          "quote.text": "Bitcoin to technologiczny wyczyn.",
-          "quote.author":
-            "—Bill Gates, współzałożyciel Microsoftu, inwestor i filantrop",
-          "section.about.title":
-            "Czym jest kryptowaluta i kalkulator kryptowalut?",
-          "section.about.p1.html":
-            "Kryptowaluty to cyfrowe aktywa zabezpieczone kryptografią i oparte na zdecentralizowanych sieciach, zwykle na technologii blockchain. Zamiast polegać na banku centralnym, transakcje są weryfikowane przez globalną sieć komputerów. Dzięki temu system jest przejrzysty, trudny do ocenzurowania i dostępny 24/7.",
-          "section.about.p2.html":
-            "Pierwszą i najbardziej znaną kryptowalutą jest <strong>Bitcoin</strong>, często nazywany cyfrowym złotem ze względu na ograniczoną podaż i rolę magazynu wartości. Inne projekty, takie jak <strong>Ethereum</strong>, dodają inteligentne kontrakty, które wykonują się automatycznie po spełnieniu określonych warunków.",
-          "section.why.title": "Dlaczego ludzie interesują się kryptowalutami?",
-          "section.why.intro":
-            "Kryptowaluty to nie tylko spekulacja i wykresy. Dla wielu osób są ciekawe, ponieważ:",
-          "section.why.li1.html":
-            "<strong>Umożliwiają płatności bez granic</strong> – możesz wysłać wartość na drugi koniec świata w kilka minut.",
-          "section.why.li2.html":
-            "<strong>Dają dostęp do finansów</strong> – wystarczy dostęp do internetu, aby założyć portfel i dołączyć do sieci.",
-          "section.why.li3.html":
-            "<strong>Wspierają programowalny pieniądz</strong> – inteligentne kontrakty pozwalają automatyzować zasady finansowe.",
-          "section.why.li4.html":
-            "<strong>Tworzą nowe cyfrowe aktywa</strong> – tokeny i NFT mogą reprezentować sztukę lub przedmioty z gier.",
-          "section.risks.title": "Ryzyka i na co uważać",
-          "section.risks.p1.html":
-            "Rynek kryptowalut jest <strong>bardzo zmienny</strong>. Ceny mogą szybko rosnąć lub spadać, a pieniądze można łatwo stracić. Trzeba też dbać o bezpieczeństwo portfela – utrata klucza prywatnego lub frazy odzyskującej może oznaczać utratę środków na zawsze.",
-          "section.risks.p2.html":
-            "Z tego powodu wiele osób traktuje kryptowaluty jako wysokie ryzyko i eksperyment. Taki prosty tracker i <strong>przelicznik kryptowalut</strong> z fikcyjnymi cenami pomaga uczyć się, jak wyglądają strony z kursem kryptowalut i jak działa SEO oraz AEO.",
-          "button.download": "Pobierz stronę"
-        }
-      };
-
-      let currentLang = "en";
-
-      function t(key) {
-        return MESSAGES[currentLang]?.[key] ?? key;
-      }
-
-      function applyTranslations(lang) {
-        currentLang = lang;
-        document.documentElement.lang = lang;
-
-        document
-          .querySelectorAll("[data-i18n-key]")
-          .forEach((el) => {
-            el.textContent = t(el.getAttribute("data-i18n-key"));
-          });
-
-        document
-          .querySelectorAll("[data-i18n-html-key]")
-          .forEach((el) => {
-            el.innerHTML = t(el.getAttribute("data-i18n-html-key"));
-          });
-
-        document
-          .querySelectorAll("[data-i18n-placeholder-key]")
-          .forEach((el) => {
-            el.placeholder = t(el.getAttribute("data-i18n-placeholder-key"));
-          });
-      }
-
-      const langSelect = document.getElementById("langSelect");
-      langSelect.onchange = () => applyTranslations(langSelect.value);
-
-      applyTranslations("en");
-
-      function download() {
-        print();
-      }
-    </script>
+    <!-- App JS -->
+    <script src="assets/js/main.js"></script>
   </body>
 </html>
-
-
-
