@@ -349,80 +349,69 @@
         </div>
       </section>
 
-      <!-- Updates / Carousel (advanced component) -->
-      <section id="news" class="py-5 bg-body-tertiary">
-        <div class="container">
-          <div class="row mb-4 align-items-center">
-            <div class="col-12 col-lg-8">
-              <h2 class="fw-bold mb-1" data-i18n-key="news.title">Updates & tips</h2>
-              <p class="text-secondary mb-0" data-i18n-key="news.subtitle">
-                Carousel is an advanced Bootstrap component (requires Bootstrap JS).
-              </p>
-            </div>
-            <div class="col-12 col-lg-4 text-lg-end mt-3 mt-lg-0">
-              <a class="btn btn-outline-primary" href="#contact">
-                <i class="fa-regular fa-paper-plane me-2" aria-hidden="true"></i>
-                <span data-i18n-key="news.cta">Ask a question</span>
-              </a>
-            </div>
-          </div>
+      <div id="tipsCarousel" class="carousel slide shadow-sm rounded-4 overflow-hidden" data-bs-ride="carousel">
+  <!-- Indicators -->
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#tipsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#tipsCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#tipsCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
 
-          <div id="tipsCarousel" class="carousel slide shadow-sm rounded-4 overflow-hidden" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#tipsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#tipsCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#tipsCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
-
-            <div class="p-5 bg-dark text-white">
-
-
-                                    <h3 class="h4 fw-bold">
-                    <i class="fa-solid fa-mobile-screen-button me-2" aria-hidden="true"></i>
-                    <span data-i18n-key="news.slide1.title">Mobile-first layout</span>
-                  </h3>
-                  <p class="mb-0 text-white-75" data-i18n-key="news.slide1.text">
-                    Resize the window to see how the grid and navbar adapt from phone to desktop.
-                  </p>
-                </div>
-              </div>
-
-              <div class="carousel-item">
-                <div class="p-5 bg-primary text-white">
-                  <h3 class="h4 fw-bold">
-                    <i class="fa-solid fa-layer-group me-2" aria-hidden="true"></i>
-                    <span data-i18n-key="news.slide2.title">Components in action</span>
-                  </h3>
-                  <p class="mb-0 text-white-75" data-i18n-key="news.slide2.text">
-                    Cards, carousel, accordion and modal demonstrate production-ready UI patterns.
-                  </p>
-                </div>
-              </div>
-
-              <div class="carousel-item">
-                <div class="p-5 bg-success text-white">
-                  <h3 class="h4 fw-bold">
-                    <i class="fa-solid fa-gauge-high me-2" aria-hidden="true"></i>
-                    <span data-i18n-key="news.slide3.title">Keep it lightweight</span>
-                  </h3>
-                  <p class="mb-0 text-white-75" data-i18n-key="news.slide3.text">
-                    Use CDNs, compress assets, and keep scripts minimal for fast loading.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <button class="carousel-control-prev" type="button" data-bs-target="#tipsCarousel" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#tipsCarousel" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
+  <!-- Slides -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="bg-dark text-white">
+        <div class="container text-center py-5 px-5 px-md-4">
+          <h3 class="h4 fw-bold mb-2">
+            <i class="fa-solid fa-mobile-screen-button me-2" aria-hidden="true"></i>
+            <span data-i18n-key="news.slide1.title">Mobile-first layout</span>
+          </h3>
+          <p class="mb-0 text-white opacity-75" data-i18n-key="news.slide1.text">
+            Resize the window to see how the grid and navbar adapt from phone to desktop.
+          </p>
         </div>
-      </section>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <div class="bg-primary text-white">
+        <div class="container text-center py-5 px-5 px-md-4">
+          <h3 class="h4 fw-bold mb-2">
+            <i class="fa-solid fa-layer-group me-2" aria-hidden="true"></i>
+            <span data-i18n-key="news.slide2.title">Components in action</span>
+          </h3>
+          <p class="mb-0 text-white opacity-75" data-i18n-key="news.slide2.text">
+            Cards, carousel, accordion and modal demonstrate production-ready UI patterns.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <div class="bg-success text-white">
+        <div class="container text-center py-5 px-5 px-md-4">
+          <h3 class="h4 fw-bold mb-2">
+            <i class="fa-solid fa-gauge-high me-2" aria-hidden="true"></i>
+            <span data-i18n-key="news.slide3.title">Keep it lightweight</span>
+          </h3>
+          <p class="mb-0 text-white opacity-75" data-i18n-key="news.slide3.text">
+            Use CDNs, compress assets, and keep scripts minimal for fast loading.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#tipsCarousel" data-bs-slide="prev" aria-label="Previous slide">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+  </button>
+
+  <button class="carousel-control-next" type="button" data-bs-target="#tipsCarousel" data-bs-slide="next" aria-label="Next slide">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+  </button>
+</div>
+
 
       <!-- FAQ / Accordion (advanced component) -->
       <section id="faq" class="py-5">
