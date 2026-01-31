@@ -45,3 +45,8 @@ a:focus-visible, button:focus-visible, .form-control:focus-visible, .form-select
 .letter-spacing{
   letter-spacing: .08em;
 }
+
+#tipsCarousel .carousel-control-prev,
+#tipsCarousel .carousel-control-next {
+  width: 5%;
+}
