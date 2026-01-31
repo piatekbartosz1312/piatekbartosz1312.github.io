@@ -50,3 +50,11 @@ a:focus-visible, button:focus-visible, .form-control:focus-visible, .form-select
 #tipsCarousel .carousel-control-next {
   width: 2%;
 }
+
+.icon-wrap {
+  width: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
