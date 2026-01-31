@@ -514,52 +514,51 @@
           </div>
 
           <div class="row g-4">
-            <div class="col-12 col-lg-6">
-              <div class="card border-0 shadow-sm rounded-4">
-                <div class="card-body p-4">
-                  <form id="contactForm" novalidate>
-                    <div class="row g-3">
-                      <div class="col-12 col-md-6">
-                        <label class="form-label" for="name" data-i18n-key="contact.name">Name</label>
-                        <input class="form-control" id="name" name="name" type="text" required />
-                        <div class="invalid-feedback" data-i18n-key="contact.validation.name">Please enter your name.</div>
-                      </div>
+           <div class="col-12 col-lg-6">
+  <div class="p-4 border rounded-4 h-100 d-flex flex-column justify-content-between">
+    <div>
+      <h3 class="h5 fw-bold mb-3">
+        Privacy / GDPR (short)
+      </h3>
 
-                      <div class="col-12 col-md-6">
-                        <label class="form-label" for="email" data-i18n-key="contact.email">Email</label>
-                        <input class="form-control" id="email" name="email" type="email" required />
-                        <div class="invalid-feedback" data-i18n-key="contact.validation.email">Please enter a valid email.</div>
-                      </div>
+      <ul class="list-unstyled mb-4">
+        <li class="d-flex align-items-start gap-3 mb-3">
+          <div class="icon-wrap">
+            <i class="fa-solid fa-graduation-cap fa-lg text-primary" aria-hidden="true"></i>
+          </div>
+          <span>This website is a student project for learning Bootstrap.</span>
+        </li>
 
-                      <div class="col-12">
-                        <label class="form-label" for="message" data-i18n-key="contact.message">Message</label>
-                        <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
-                        <div class="invalid-feedback" data-i18n-key="contact.validation.message">Please enter a message.</div>
-                      </div>
+        <li class="d-flex align-items-start gap-3 mb-3">
+          <div class="icon-wrap">
+            <i class="fa-solid fa-database fa-lg text-primary" aria-hidden="true"></i>
+          </div>
+          <span>No personal data is collected or stored on a server.</span>
+        </li>
 
-                      <div class="col-12 d-flex flex-wrap gap-2 align-items-center">
-                        <button class="btn btn-primary" type="submit">
-                          <i class="fa-regular fa-paper-plane me-2" aria-hidden="true"></i>
-                          <span data-i18n-key="contact.submit">Send (demo)</span>
-                        </button>
-                        <a class="btn btn-outline-secondary" href="privacy.html">
-                          <i class="fa-solid fa-shield-halved me-2" aria-hidden="true"></i>
-                          <span data-i18n-key="contact.privacy">Privacy info</span>
-                        </a>
-                        <span class="small text-secondary ms-md-auto" data-i18n-key="contact.notice">
-                          No data is stored.
-                        </span>
-                      </div>
-                    </div>
-                  </form>
+        <li class="d-flex align-items-start gap-3 mb-3">
+          <div class="icon-wrap">
+            <i class="fa-solid fa-envelope-open-text fa-lg text-primary" aria-hidden="true"></i>
+          </div>
+          <span>Contact form inputs (if used) remain only in your browser and are not retained.</span>
+        </li>
+      </ul>
+    </div>
 
-                  <div class="alert alert-success mt-3 d-none" id="contactSuccess" role="alert">
-                    <i class="fa-solid fa-check me-2" aria-hidden="true"></i>
-                    <span data-i18n-key="contact.success">Thanks! This is a demo — nothing was sent.</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+    <div class="pt-4 mt-3 border-top">
+      <div class="d-flex align-items-start gap-3">
+        <div class="icon-wrap">
+          <i class="fa-solid fa-link fa-lg text-primary" aria-hidden="true"></i>
+        </div>
+        <span>
+          Read the full details on the
+          <a href="privacy.html">Privacy page</a>.
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
 
             <div class="col-12 col-lg-6">
   <div class="p-4 border rounded-4 h-100 d-flex flex-column justify-content-between">
