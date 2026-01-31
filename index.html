@@ -417,82 +417,48 @@
       <section id="faq" class="py-5">
         <div class="container">
           <div class="row mb-4">
-            <div class="col-12 col-lg-8">
-              <h2 class="fw-bold mb-1" data-i18n-key="faq.title">FAQ</h2>
-              <p class="text-secondary mb-0" data-i18n-key="faq.subtitle">
-                Accordion is another advanced Bootstrap component.
-              </p>
-            </div>
-          </div>
+  <div class="col-12 col-lg-6 mx-lg-auto text-center">
+    <h2 class="fw-bold mb-1" data-i18n-key="faq.title">FAQ</h2>
+    <p class="text-secondary mb-0" data-i18n-key="faq.subtitle">
+      Accordion is another advanced Bootstrap component.
+    </p>
+  </div>
+</div>
+
 
           <div class="row g-4">
-            <div class="col-12 col-lg-7">
-              <div class="accordion" id="faqAccordion">
-                <div class="accordion-item">
-                  <h3 class="accordion-header">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
-                      <span data-i18n-key="faq.q1">Are these real crypto prices?</span>
-                    </button>
-                  </h3>
-                  <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
-                    <div class="accordion-body" data-i18n-key="faq.a1">
-                      No. All numbers are fake demo values to practice layouts, components, and basic JavaScript.
-                    </div>
-                  </div>
-                </div>
+  <div class="col-12 col-lg-6 mx-lg-auto">
+    <div class="accordion mb-4" id="faqAccordion">
+      <!-- keep ALL your existing accordion items here exactly as-is -->
+    </div>
 
-                <div class="accordion-item">
-                  <h3 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
-                      <span data-i18n-key="faq.q2">What Bootstrap features are used?</span>
-                    </button>
-                  </h3>
-                  <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                    <div class="accordion-body" data-i18n-key="faq.a2">
-                      Grid system, navbar, cards, carousel, modal, accordion, and many utility classes for spacing, typography, flex, and color.
-                    </div>
-                  </div>
-                </div>
+    <div class="p-4 border rounded-4">
+      <h3 class="h5 fw-bold mb-2" data-i18n-key="about.title">About this demo</h3>
+      <p class="text-secondary mb-3" data-i18n-key="about.text">
+        This project exists to demonstrate front-end production basics:
+        responsive layout, clean structure, and deployable static files.
+      </p>
 
-                <div class="accordion-item">
-                  <h3 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
-                      <span data-i18n-key="faq.q3">Do you store form data?</span>
-                    </button>
-                  </h3>
-                  <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                    <div class="accordion-body" data-i18n-key="faq.a3">
-                      No. This site is a student project. Any “submission” is handled only in your browser and is not stored.
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+      <div class="d-flex flex-wrap gap-2">
+        <a class="btn btn-outline-secondary btn-sm" href="privacy.html">
+          <i class="fa-solid fa-shield-halved me-1"></i>
+          <span data-i18n-key="about.privacyBtn">Read privacy info</span>
+        </a>
+        <a class="btn btn-outline-secondary btn-sm" href="#contact">
+          <i class="fa-regular fa-envelope me-1"></i>
+          <span data-i18n-key="about.contactBtn">Contact section</span>
+        </a>
+      </div>
 
-            <div class="col-12 col-lg-5">
-              <div class="p-4 border rounded-4 h-100 mb-5">
-                <h3 class="h5 fw-bold mb-2" data-i18n-key="about.title">About this demo</h3>
-                <p class="text-secondary mb-3" data-i18n-key="about.text">
-                  This project exists to demonstrate front‑end production basics: responsive layout, clean structure, and deployable static files.
-                </p>
-                <div class="d-flex flex-wrap gap-2">
-                  <a class="btn btn-outline-secondary btn-sm" href="privacy.html">
-                    <i class="fa-solid fa-shield-halved me-1" aria-hidden="true"></i>
-                    <span data-i18n-key="about.privacyBtn">Read privacy info</span>
-                  </a>
-                  <a class="btn btn-outline-secondary btn-sm" href="#contact">
-                    <i class="fa-regular fa-envelope me-1" aria-hidden="true"></i>
-                    <span data-i18n-key="about.contactBtn">Contact section</span>
-                  </a>
-                </div>
-                <hr class="my-4" />
-                <p class="small text-secondary mb-0" data-i18n-key="about.tech">
-                  Built with Bootstrap 5 + Font Awesome via CDN. Custom styles in <code>assets/css/styles.css</code>.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+      <hr class="my-4" />
+      <p class="small text-secondary mb-0" data-i18n-key="about.tech">
+        Built with Bootstrap 5 + Font Awesome via CDN.
+        Custom styles in <code>assets/css/styles.css</code>.
+      </p>
+    </div>
+  </div>
+</div>
+
       </section>
 
       <!-- Contact section (Bootstrap form controls) -->
